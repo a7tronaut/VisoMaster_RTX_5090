@@ -48,7 +48,17 @@ Before proceeding, ensure you have the following installed on your system:
 
 ## **Installation Steps**
 
-### **1. Clone the Repository**  
+### **1. Install an apropriate NVIDIA driver for RTX 5090 card**  
+Open a terminal or command prompt and run:  
+```sh
+sudo apt update
+wget https://us.download.nvidia.com/XFree86/Linux-x86_64/570.86.16/NVIDIA-Linux-x86_64-570.86.16.run
+chmod +x NVIDIA-Linux-x86_64-570.86.16.run
+sudo ./NVIDIA-Linux-x86_64-570.86.16.run
+nvidia-smi
+```
+
+### **2. Clone the Repository**  
 Open a terminal or command prompt and run:  
 ```sh
 git clone https://github.com/visomaster/VisoMaster.git
@@ -57,20 +67,17 @@ git clone https://github.com/visomaster/VisoMaster.git
 cd VisoMaster
 ```
 
-### **2. Create and Activate a Conda Environment**  
+### **3. Create and Activate a Conda Environment**  
 ```sh
-conda create -n visomaster python=3.10.13 -y
+conda create -n visomaster python=3.11
 ```
 ```sh
 conda activate visomaster
 ```
 
-### **3. Install CUDA and cuDNN**  
+### **3. Install PyTorch nightly build with CUDA 12.8**  
 ```sh
-conda install -c nvidia/label/cuda-12.4.1 cuda-runtime
-```
-```sh
-conda install -c conda-forge cudnn
+pip install --pre torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/nightly/cu128
 ```
 
 ### **4. Install Additional Dependencies**  
@@ -78,7 +85,7 @@ conda install -c conda-forge cudnn
 conda install scikit-image
 ```
 ```sh
-pip install -r requirements_cu124.txt
+pip install -r requirements_cu128.txt
 ```
 
 ### **5. Download Models and Other Dependencies**  
