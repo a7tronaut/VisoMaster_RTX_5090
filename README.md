@@ -74,16 +74,19 @@ conda create -n visomaster python=3.11
 ```sh
 conda activate visomaster
 ```
+### **4. Install Install CUDA and cuDNN and additional dependencies**  
+```sh
+conda install -c nvidia/label/cuda-12.4.1 cuda-runtime
+conda install -c conda-forge cudnn
+conda install scikit-image
+```
 
 ### **3. Install PyTorch nightly build with CUDA 12.8**  
 ```sh
-pip install --pre torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/nightly/cu128
+pip install --pre torch torchvision torchaudio --index-url https://download.pytorch.org/whl/nightly/cu128
+
 ```
 
-### **4. Install Additional Dependencies**  
-```sh
-conda install scikit-image
-```
 ```sh
 pip install -r requirements_cu128.txt
 ```
