@@ -48,14 +48,19 @@ Before proceeding, ensure you have the following installed on your system:
 
 ## **Installation Steps**
 
-### **1. Install an apropriate NVIDIA driver for RTX 5090 card**  
-Open a terminal or command prompt and run:  
+### **1. Install an apropriate NVIDIA driver for RTX 5070Ti/RTX 5090 card**  
+For Linux open a terminal or command prompt and run:  
 ```sh
 sudo apt update
 wget https://us.download.nvidia.com/XFree86/Linux-x86_64/570.86.16/NVIDIA-Linux-x86_64-570.86.16.run
 chmod +x NVIDIA-Linux-x86_64-570.86.16.run
 sudo ./NVIDIA-Linux-x86_64-570.86.16.run
 nvidia-smi
+```
+For Windows install drivers:
+```sh
+576.88
+577.00
 ```
 
 ### **2. Clone the Repository**  
